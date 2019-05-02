@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/#/viewAllProduct">BACK</a><br>
+        <table class="table" style="border-radius: 5px;width: 50%; margin: 0px auto; float: none;">
+            <thead>
+            <tr>
+                <th>
+                    PANIER
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Total: {{ getSum() | currency: " Ariary " }}</strong>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="clearCart();">Clear Cart</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="payerCart();" data-toggle="modal" data-target="#myModal">Payer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container" ng-repeat="item in produits">
+            <div class="card-group">
+              <div class="card">
+                <img class="card-img-top" ng-src="images/{{item.picture}}" alt="Bologna" style="width: 75px;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.qty + 'x ' + item.name + ' = ' + (getCost(item) | currency: " Ariary ") }}</h5>
+                  <h7 class="card-subtitle mb-2">{{item.details}}</h7>
+                  <!-- <a  href="#/viewProductDetail/{{item.id}}" class="card-link text-danger">Read More</a> -->
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted" style="text-align: center;">
+                    <button class="btn btn-info" ng-click="removeItem(item);">Remove Item</button>
+                </small>
+                </div>
+              </div>
+            </div>
+          </div><br>
+
+  </body>
+</html>
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+              <div class="modal-body">
+              <p><strong>{{successTextAlert}}</strong></p>
+            </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

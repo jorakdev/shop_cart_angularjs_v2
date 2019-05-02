@@ -1,0 +1,35 @@
+<a href="/#/viewAllProduct">BACK</a><br>
+<a href="/#/cart" >CART <a href="/#/cart" ng-if="count()>0"> you have <b><span >{{count()}}</span></b> item in cart</a></a>
+<div ng-repeat="Detail in products | filter: {id: id }">
+    <table class="table" style="border-radius: 5px;width: 90%; margin: 0px auto; float: none;">
+        <thead>
+        <tr>
+            <th>
+              Image preview
+            </th>
+            <th>
+                Product details
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img ng-src="images/{{Detail.picture}}" alt="" style="border: 1px solid #ddd; border-radius: 4px;padding: 5px;width: 200px;">
+                </td>
+                <td>
+                    <p>{{Detail.details}}</p>
+                </td>
+                <td>
+                    <button class="btn btn-primary" ng-click="addItem(Detail)">Add to Cart</button>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

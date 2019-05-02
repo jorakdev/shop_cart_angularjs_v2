@@ -1,0 +1,41 @@
+[
+
+  {
+
+    "id": 1,
+    "name": "RTX2080",
+    "category": "graphic card",
+    "details": "La carte GeForce RTX2080 est la carte graphique la plus avancée au monde exploitant  NVIDIA Maxwell.",
+    "price": 100,
+    "qty": 1,
+    "picture": "/rtx2080.jpg"
+
+
+
+  },
+
+  {
+
+    "id": 2,
+    "name": "GTX1080",
+    "category": "graphic card",
+    "details": "Attention aux yeux, la MSI GeForce GTX 1080 avec ses 2560 coeurs CUDA (+25%...)",
+    "price": 90,
+    "qty": 1,
+    "picture": "/gtx1080.jpg"
+
+  },
+
+  {
+
+    "id": 3,
+    "name": "GTX980",
+    "category": "graphic card",
+    "details": "La carte GeForce GTX 980 est la carte l'architecture de nouvelle génération NVIDIA Maxwell.",
+    "price": 80,
+    "qty": 1,
+    "picture": "/gtx980.jpg"
+
+  }
+
+]
